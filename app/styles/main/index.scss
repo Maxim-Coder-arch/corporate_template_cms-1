@@ -1,0 +1,330 @@
+@use "../colors/colors.scss" as *;
+@use "../mixins/mixins.scss" as *;
+
+.admin-main {
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.admin-header {
+  margin-bottom: 2rem;
+  
+  h1 {
+    @include font(600, 2rem);
+    color: $text-light;
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    @include font(300, 1rem);
+    color: $text-muted;
+  }
+}
+
+// Сетка статистики
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: $glass-bg;
+  backdrop-filter: $glass-blur;
+  border: 1px solid $glass-border;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    border-color: $primary;
+    transform: translateY(-4px);
+  }
+  
+  &__icon {
+    font-size: 2.5rem;
+    background: rgba($primary, 0.1);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+  }
+  
+  &__content {
+    flex: 1;
+    position: relative;
+  }
+  
+  &__value {
+    @include font(600, 2rem);
+    color: $text-light;
+    display: block;
+    line-height: 1;
+  }
+  
+  &__label {
+    @include font(300, 0.85rem);
+    color: $text-muted;
+    display: block;
+    margin-top: 0.25rem;
+  }
+  
+  &__badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: $primary;
+    color: $black;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 20px;
+  }
+}
+
+// Ряды статистики
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stats-block {
+  background: $glass-bg;
+  backdrop-filter: $glass-blur;
+  border: 1px solid $glass-border;
+  padding: 1.5rem;
+  
+  h2 {
+    @include font(500, 1.2rem);
+    color: $text-light;
+    margin-bottom: 1rem;
+  }
+}
+
+.visitors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.visitor-item {
+  text-align: center;
+  padding: 0.8rem;
+  background: rgba($black, 0.2);
+  
+  .visitor-period {
+    @include font(300, 0.75rem);
+    color: $text-muted;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+  
+  .visitor-value {
+    @include font(600, 1.5rem);
+    color: $primary;
+  }
+}
+
+.visitor-trend {
+  @include font(300, 0.8rem);
+  color: $primary;
+  text-align: center;
+  padding-top: 0.5rem;
+  border-top: 1px solid $glass-border;
+}
+
+// Заметки
+.notes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  
+  .add-note-btn {
+    background: transparent;
+    border: 1px solid $glass-border;
+    padding: 0.3rem 0.8rem;
+    color: $primary;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background: rgba($primary, 0.1);
+    }
+  }
+}
+
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.note-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem;
+  background: rgba($black, 0.2);
+  border-left: 3px solid;
+  
+  &.priority-high { border-left-color: #ff6b6b; }
+  &.priority-medium { border-left-color: $primary; }
+  &.priority-low { border-left-color: $primary;}
+  
+  .note-text {
+    @include font(300, 0.85rem);
+    color: $text-light;
+  }
+  
+  .note-priority {
+    font-size: 0.8rem;
+  }
+}
+
+// Быстрые действия
+.quick-actions {
+  background: $glass-bg;
+  backdrop-filter: $glass-blur;
+  border: 1px solid $glass-border;
+  padding: 1.5rem;
+  
+  h2 {
+    @include font(500, 1.2rem);
+    color: $text-light;
+    margin-bottom: 1rem;
+  }
+}
+
+.actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.action-card {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem;
+  background: rgba($black, 0.2);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+  
+  &:hover {
+    background: rgba($primary, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .action-icon {
+    font-size: 1.5rem;
+  }
+  
+  span:not(.action-icon) {
+    @include font(400, 0.9rem);
+    color: $text-light;
+  }
+  
+  .action-badge {
+    background: $primary;
+    color: $black;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 20px;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-main {
+    padding: 1rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .actions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.add-note-form {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  
+  textarea {
+    background: rgba($black, 0.3);
+    border: 1px solid $glass-border;
+    padding: 0.5rem;
+    color: $text-light;
+    @include font(300, 0.85rem);
+    resize: vertical;
+  }
+  
+  select {
+    background: rgba($black, 0.3);
+    border: 1px solid $glass-border;
+    padding: 0.4rem;
+    color: $text-light;
+  }
+  
+  button {
+    background: $primary;
+    border: none;
+    padding: 0.4rem;
+    color: $black;
+    cursor: pointer;
+    
+    &:hover {
+      background: darken($primary, 10%);
+    }
+  }
+}
+
+.note-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem;
+  background: rgba($black, 0.2);
+  border-left: 3px solid;
+  border-radius: 4px;
+  
+  &.priority-high { border-left-color: #ff6b6b; }
+  &.priority-medium { border-left-color: $primary; }
+  
+  .note-text {
+    @include font(300, 0.85rem);
+    color: $text-light;
+    flex: 1;
+  }
+  
+  .note-delete {
+    background: transparent;
+    border: none;
+    color: $text-muted;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0 0.3rem;
+    
+    &:hover {
+      color: #ff6b6b;
+    }
+  }
+}

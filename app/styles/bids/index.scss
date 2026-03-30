@@ -1,0 +1,177 @@
+@use "../colors/colors.scss" as *;
+@use "../mixins/mixins.scss" as *;
+
+.bids {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("/backgrounds/first-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+}
+
+.bids-title {
+  @include font(600, 2rem);
+  color: $text-light;
+  margin-bottom: 0.5rem;
+}
+
+.bids-block {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.bid-item {
+  width: calc((100% / 2) - 10px);
+  min-height: 300px;
+  background: $glass-bg;
+  backdrop-filter: $glass-blur;
+  border: 1px solid $glass-border;
+  min-width: 350px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bid-item-header {
+  width: 100%;
+  border-bottom: 1px solid $glass-border;
+  display: flex;
+  padding-bottom: 10px;
+  align-items: center;
+  gap: 15px;
+  @include font(500, 1rem);
+  color: $text-light;
+  flex-wrap: wrap;
+}
+
+.bid-item-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: $primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+
+.bit-item-body {
+  width: 100%;
+  padding-top: 10px;
+  max-height: 280px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.bid-user-text {
+  @include font(300, 0.9rem);
+  color: $text-light;
+}
+
+.bit-item-footer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.delete-btn {
+  @include font(400, 0.9rem);
+  color: $primary;
+  background: transparent;
+  border: 1px solid $glass-border;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  &:hover {
+    background: rgba($primary, 0.1);
+  }
+}
+
+.bids-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.bids-filters {
+  display: flex;
+  gap: 0.5rem;
+  
+  .filter-btn {
+    background: transparent;
+    border: 1px solid $glass-border;
+    padding: 0.3rem 0.8rem;
+    color: $text-muted;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      border-color: $primary;
+      color: $primary;
+    }
+    
+    &.active {
+      background: rgba($primary, 0.1);
+      border-color: $primary;
+      color: $primary;
+    }
+  }
+}
+
+.bid-item-left {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex: 1;
+}
+
+.bid-item-info {
+  .bid-item-name {
+    @include font(500, 1rem);
+    color: $text-light;
+  }
+  
+  .bid-item-contact {
+    @include font(300, 0.8rem);
+    color: $text-muted;
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .bid-item-date {
+    @include font(300, 0.7rem);
+    color: rgba($text-muted, 0.6);
+    margin-top: 0.2rem;
+  }
+}
+
+.bid-item-status {
+  select {
+    background: rgba($black, 0.3);
+    border: 1px solid;
+    padding: 0.2rem 0.4rem;
+    color: $text-light;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.bids-empty,
+.bids-loading {
+  text-align: center;
+  padding: 3rem;
+  color: $text-muted;
+}

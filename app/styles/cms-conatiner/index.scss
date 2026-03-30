@@ -1,0 +1,12 @@
+@use "../colors/colors.scss" as *;
+@use "../mixins/mixins.scss" as *;
+
+.cms-container {
+  width: calc(100vw - 300px);
+  height: 100vh;
+  overflow-y: auto;
+  background-image: url("/backgrounds/first-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

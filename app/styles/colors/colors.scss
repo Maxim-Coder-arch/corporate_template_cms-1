@@ -1,0 +1,92 @@
+// styles/colors.scss
+
+// ========== ОСНОВНЫЕ ЦВЕТА ==========
+$primary: #dd4262;      // основной акцент
+$secondary: #c9ccce;    // вторичный
+$text-light: #edeff0;   // светлый текст
+$text-muted: #7e98a8;   // приглушенный текст
+$dark-bg: #0e1828;      // темный фон
+$border-light: #75879e; // светлые границы
+$card-bg: #21314a;      // фон карточек
+$accent-dark: #5a3038;  // темный акцент
+$accent-deep: #1e3439;  // глубокий акцент
+$neutral: #5c5955;      // нейтральный
+
+// ========== АКЦЕНТНЫЕ ЦВЕТА (градиент) ==========
+$accent-1: #dd4262;
+$accent-2: #d95e78;
+$accent-3: #d5798d;
+$accent-4: #d195a3;
+$accent-5: #cdb0b8;
+
+$accent-secondary-1: #c9ccce;
+$accent-secondary-2: #7e98a8;
+$accent-secondary-3: #8da2b0;
+$accent-secondary-4: #9cadb7;
+$accent-secondary-5: #abb7bf;
+$accent-secondary-6: #bac2c6;
+$accent-secondary-7: #c9ccce;
+
+// ========== ПРИГЛУШЁННЫЕ ==========
+$muted-1: #21314a;
+$muted-2: #5a3038;
+$muted-3: #1e3439;
+$muted-4: #5c5955;
+
+// ========== СВЕТЛЫЕ (для текста на темном) ==========
+$white: #ffffff;
+$light-1: #fceef1;
+$light-2: #f9dde2;
+$light-3: #f6cbd4;
+$light-4: #f3bac6;
+$light-5: #f0a9b8;
+$light-6: #ec98a9;
+$light-7: #e9879b;
+$light-8: #e6768d;
+$light-9: #e3647f;
+$light-10: #e05370;
+$light-11: #dd4262;
+
+// ========== ТЁМНЫЕ (градиент фона) ==========
+$black: #000000;
+$dark-1: #140609;
+$dark-2: #280c12;
+$dark-3: #3c121b;
+$dark-4: #501824;
+$dark-5: #641e2d;
+$dark-6: #792435;
+$dark-7: #8d2a3e;
+$dark-8: #a13047;
+$dark-9: #b53650;
+$dark-10: #c93c59;
+$dark-11: #dd4262;
+
+// ========== ПРОТИВОПОЛОЖНЫЕ (акценты) ==========
+$opposite-1: #22bd9d;   // бирюзовый
+$opposite-2: #363331;   // темно-серый
+$opposite-3: #816757;   // коричневый
+$opposite-4: #c6ab8c;   // бежевый
+$opposite-5: #f1e7d7;   // светлый беж
+$opposite-6: #8a7861;   // оливковый
+$opposite-7: #deceb5;   // песочный
+$opposite-8: #a5cfc7;   // мятный
+$opposite-9: #e1cbc6;   // розоватый
+$opposite-10: #a3a6aa;  // холодный серый
+
+// ========== ГРАДИЕНТЫ ==========
+$gradient-primary: linear-gradient(135deg, $primary, $accent-3);
+$gradient-dark: linear-gradient(135deg, $dark-3, $dark-7);
+$gradient-glass: linear-gradient(135deg, rgba($white, 0.1), rgba($white, 0.02));
+$gradient-accent: linear-gradient(135deg, $accent-2, $accent-4);
+
+// ========== ТЕНИ ==========
+$shadow-sm: 0 4px 12px rgba($black, 0.1);
+$shadow-md: 0 8px 24px rgba($black, 0.15);
+$shadow-lg: 0 12px 36px rgba($black, 0.2);
+$shadow-glow: 0 0 20px rgba($primary, 0.3);
+$shadow-glass: 0 8px 32px rgba($black, 0.2);
+
+// ========== СТЕКЛЯННЫЕ ЭФФЕКТЫ ==========
+$glass-bg: rgba($dark-2, 0.6);
+$glass-border: rgba($white, 0.1);
+$glass-blur: blur(12px);

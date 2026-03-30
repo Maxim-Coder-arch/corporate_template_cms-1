@@ -1,0 +1,158 @@
+@use "../colors/colors.scss" as *;
+@use "../mixins/mixins.scss" as *;
+
+.sidebar {
+  width: 300px;
+  height: 100vh;
+  background: url("/backgrounds/second-bg.jpg");
+  background-size: cover;
+  backdrop-filter: blur(12px);
+  border-right: 1px solid $glass-border;
+  overflow-y: auto;
+  
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: rgba($white, 0.05);
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: $primary;
+    border-radius: 4px;
+  }
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    position: relative;
+    min-height: auto;
+  }
+}
+
+.sidebar__content {
+  padding: 2rem 1rem;
+}
+
+.sidebar__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid $glass-border;
+  
+  &-image {
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  &-name {
+    @include font(600, 1.2rem);
+    color: $text-light;
+  }
+}
+
+.sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar__item {
+  width: 100%;
+}
+
+.sidebar__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  @include font(400, 0.95rem);
+  color: $text-muted;
+  
+  &:hover {
+    background: rgba($white, 0.05);
+    color: $text-light;
+  }
+  
+  &--active {
+    background: rgba($primary, 0.1);
+    color: $primary;
+  }
+  
+  &--parent {
+    justify-content: space-between;
+  }
+  
+  &-label {
+    flex: 1;
+    text-align: left;
+  }
+  
+  &-arrow {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-left: 0.5rem;
+  }
+}
+
+.sidebar__submenu {
+  overflow: hidden;
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sidebar__sublink {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  @include font(400, 0.85rem);
+  color: $text-muted;
+  transition: all 0.2s ease;
+  display: block;
+  
+  &:hover {
+    background: rgba($white, 0.05);
+    color: $text-light;
+  }
+  
+  &--active {
+    color: $primary;
+    background: rgba($primary, 0.1);
+  }
+}
+
+.sidebar__footer {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid $glass-border;
+}
+
+.sidebar__website {
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  text-decoration: none;
+  @include font(400, 0.9rem);
+  color: $primary;
+  text-align: center;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: rgba($primary, 0.1);
+  }
+}
