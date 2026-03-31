@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: 'standalone',
   images: {
     // Если картинки с конкретных доменов
     domains: ['cdn.example.com', 'images.unsplash.com', 'res.cloudinary.com'],
